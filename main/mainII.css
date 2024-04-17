@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #111;
+    color: #fff;
+}
+nav{
+    width: 80vw;
+    margin: 0 auto;
+}
+.nav-link{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-size: 5vw;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    transition: .4s ease;
+}
+.nav-link:hover{
+    color: #fff;
+}
+.nav-link span{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    gap: 3vw;
+    font-size: 3vw;
+    letter-spacing: 3px;
+    font-weight: 500;
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    transition: .1s ease;
+}
+.nav-link span:hover{
+    color: #fff;
+}
+.img-wrapper{
+    position: absolute;
+    left:11vw;
+    top: -11vw;
+    width: 22vw;
+    height:22vw;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    visibility: hidden;
+    transform: scale(0.3);
+}
+.img-placeholder, .img-placeholder img{
+    height: 100%;
+    width: 100%;
+}
+.img-placeholder img{
+    object-fit: cover;
+    display: block;
+}
+
+/* CSS from other files */
+.loading{display:flex;align-items:center;justify-content:center;position:fixed;top:0;right:0;bottom:0;left:0;z-index:100;background:white;opacity:0;transition:0.5s;}
+.before-load .loading{opacity:1;}
+@keyframes loading-spin{100%{transform:rotate(360deg);}}
+@keyframes loading-circle-ani{0%{stroke-dashoffset:157;}75%{stroke-dashoffset:-147;}100%{stroke-dashoffset:-157;}}
+.loading-circle{width:100px;height:100px;animation:loading-spin 2s infinite;}
+.loading-circle img{width:100px;height:100px;}
+.loading-circle circle{stroke:#171010;stroke-width:4;stroke-dasharray:157,157;stroke-dashoffset:0;fill:transparent;animation:loading-circle-ani 1s infinite;}
